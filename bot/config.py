@@ -16,4 +16,8 @@ class Config:
     timezone: str = os.getenv('TIMEZONE', 'UTC')
     log_level: str = os.getenv('LOG_LEVEL', 'INFO')
 
+    # --- DeepSeek configuration ---
+    deepseek_api_url: str = os.getenv('DEEPSEEK_API_URL', 'https://api.deepseek.com/v1/chat/completions')
+    deepseek_api_key: str = os.getenv('DEEPSEEK_API_KEY', '')
+
 config = Config()

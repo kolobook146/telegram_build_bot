@@ -1,3 +1,32 @@
 /.env
 /data
 /secrets
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.swp
+venv/
+.env
+.env.*
+*.egg-info/
+dist/
+build/
+
+# IDEs
+.vscode/
+.idea/
+
+# OS
+.DS_Store
+
+# Data and secrets
+service_account.json
+*.sqlite
+data/
+secrets/
+whitelist.json
+
+# Docker
+*.log

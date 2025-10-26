@@ -2,7 +2,7 @@ import json
 import os
 from typing import Set
 
-from .config import config
+from bot.config import config
 
 class Auth:
     def __init__(self, whitelist_path: str = None):
