@@ -1,0 +1,9 @@
+# aiogram chosen for Telegram; gspread + google-auth for Sheets; sqlite3 is stdlib
+aiogram==3.0.0b8
+aiohttp==3.8.4
+python-telegram-bot==21.6
+gspread==6.0.2
+google-auth==2.35.0
+loguru==0.7.2
+python-dotenv==1.0.1
+pytz==2025.2
