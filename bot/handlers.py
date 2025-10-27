@@ -2,6 +2,7 @@ from datetime import datetime
 import pytz
 import sqlite3
 from aiogram import types
+from aiogram import F
 from aiogram.filters import Command
 from loguru import logger
 
@@ -42,7 +43,7 @@ async def try_flush_queue(queue, gsheet_client):
 def register_handlers(dp, auth, queue, gsheet_client):
     llm_client = LLMClient()
 
-    @dp.message()
+    @dp.message(F.text & ~F.text.startswith("/"))
     async def handle_message(message: types.Message):
         user = message.from_user
         username = user.username or ""
