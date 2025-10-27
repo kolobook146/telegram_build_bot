@@ -9,6 +9,7 @@ from services.google_sheets import GoogleSheetsClient
 from bot.persistent_queue import PersistentQueue
 from bot.handlers import register_handlers
 
+
 # -----------------------------
 # Конфигурация логгера
 # -----------------------------
