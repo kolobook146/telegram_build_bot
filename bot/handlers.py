@@ -6,7 +6,7 @@ from aiogram.filters import Command
 from loguru import logger
 
 from bot.config import config
-from services.deepseek_service import DeepSeekClient
+from services.llm_service import LLMClient
 
 
 # -----------------------------
@@ -40,7 +40,7 @@ async def try_flush_queue(queue, gsheet_client):
 # Основная регистрация хендлеров
 # -----------------------------
 def register_handlers(dp, auth, queue, gsheet_client):
-    deepseek = DeepSeekClient()
+    llm_client = LLMClient()
 
     @dp.message()
     async def handle_message(message: types.Message):
@@ -62,13 +62,13 @@ def register_handlers(dp, auth, queue, gsheet_client):
         ts_utc, ts_local = now_timestamps(config.timezone)
 
         # -----------------------------
-        # Обработка через DeepSeek
+        # Обработка через llm_client
         # -----------------------------
         try:
-            parsed = deepseek.parse_message(message.text)
-            logger.info(f"DeepSeek parsed: {parsed}")
+            parsed = llm_client.parse_message(message.text)
+            logger.info(f"llm_client parsed: {parsed}")
         except Exception as e:
-            logger.exception("DeepSeek parsing failed")
+            logger.exception("llm_client parsing failed")
             parsed = {"Вид работ": "", "Объем": "", "Комментарий": message.text}
 
         # -----------------------------

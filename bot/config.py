@@ -16,8 +16,9 @@ class Config:
     timezone: str = os.getenv('TIMEZONE', 'UTC')
     log_level: str = os.getenv('LOG_LEVEL', 'INFO')
 
-    # --- DeepSeek configuration ---
-    deepseek_api_url: str = os.getenv('DEEPSEEK_API_URL', 'https://api.deepseek.com/v1/chat/completions')
-    deepseek_api_key: str = os.getenv('DEEPSEEK_API_KEY', '')
+    # --- LLM / OpenRouter ---
+    llm_api_url: str = os.getenv('OPENROUTER_API_URL', 'https://openrouter.ai/api/v1/chat/completions')
+    llm_api_key: str = os.getenv('OPENROUTER_API_KEY', '')
+    llm_model: str = os.getenv('LLM_MODEL', 'tngtech/deepseek-r1t2-chimera:free')
 
 config = Config()
